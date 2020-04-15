@@ -57,8 +57,7 @@ public class Player {
         win.setFont(Main.mainFont);
         win.setColor(Color.WHITE);
         win.drawString("YOUR HAND",0,20);
-        win.drawString("CURRENT TRICK",55
-                0,20);
+        win.drawString("CURRENT TRICK",550,20);
         for(int i=0;i<c.size();i++) {
             win.drawString(""+i,i*Card.cardOffset+15,110);
         }

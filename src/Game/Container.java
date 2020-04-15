@@ -7,11 +7,16 @@ import java.util.Random;
 public class Container {
     int turn;
     int handNum=9;
-    final int myID = 0;
+    boolean bidding=true;
+    int myID = 0;
     Random r = new Random();
     ArrayList<Player> p = new ArrayList<>();
     Trick t = new Trick();
     Main m;
+
+    public Container(Main m){
+        this.m=m;
+    }
 
     public void addPlayer(Player p){
         this.p.add(p);
@@ -38,6 +43,22 @@ public class Container {
         }
 
         t.reset();
+    }
+
+    void turnHandler(){
+        if(isMyTurn()&&!bidding){
+            int temp=keyControl();
+            if(temp>-1){
+                //add a copy of the card selected by player to the current trick
+                t.c.add(p.get(myID).c.get(temp).copy());
+
+                //remove card from players hand
+                p.get(myID).c.remove(temp);
+            }
+        }
+        else if(isMyTurn()){
+
+        }
     }
 
     boolean checkCard(int genNum){ //check if card has been dealt
@@ -127,7 +148,7 @@ public class Container {
     }
 
     int keyControl(){
-        for(int i=0;i<m.keys.length;i++){
+        for(int i=0;i<10;i++){
             if(m.keys[i])
                 return i;
         }
@@ -135,18 +156,8 @@ public class Container {
     }
 
     void update(){
-        if(isMyTurn()){
-            int temp=keyControl();
+        System.out.println(keyControl());
 
-            if(temp>-1){
-                //add a copy of the card selected by player to the current trick
-                t.c.add(p.get(myID).c.get(temp).copy());
-
-                //remove card from players hand
-                p.get(myID).c.remove(temp);
-            }
-
-        }
     }
 
     }

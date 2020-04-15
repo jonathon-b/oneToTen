@@ -18,6 +18,4 @@ public interface Main {
     int[] heart = {26,38};
     int[] spade = {39,51};
 
-    Container game = new Container();
-
 }
