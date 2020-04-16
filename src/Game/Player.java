@@ -22,6 +22,11 @@ public class Player {
         this.name=name;
     }
 
+    void setBid(int bid){
+        this.bid=bid;
+        hasBid=true;
+    }
+
     public void drawCards(Graphics2D win){
         for (Card i:c) {
             i.draw(win);

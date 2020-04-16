@@ -56,6 +56,10 @@ public class Card {
         return -1;
     }
 
+    public void controlDraw(int x, int y, Graphics2D win){
+        win.drawImage(Main.is.getSlice(this.getVal(),this.getSuitNum()),x, y,null);
+    }
+
     public void draw(Graphics2D win){
         win.drawImage(Main.is.getSlice(this.getVal(),this.getSuitNum()),cardOffset*cardIndex, cardHeight,null);
     }

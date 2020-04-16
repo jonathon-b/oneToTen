@@ -2,13 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c42e5d8-3487-4a0b-bd38-8a49762d3046" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/oneToTen/Game/Card.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/oneToTen/Game/Card.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/oneToTen/Game/Container.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/oneToTen/Game/Container.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/oneToTen/Game/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/oneToTen/Game/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/oneToTen/Game/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/oneToTen/Game/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/oneToTen/Game/Trick.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/oneToTen/Game/Trick.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/oneToTen/Utilities/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/oneToTen/Utilities/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Card.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/Container.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Container.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Trick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Trick.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Utilities/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utilities/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -90,7 +94,19 @@
       <option name="presentableId" value="Default" />
       <updated>1586759157609</updated>
     </task>
+    <task id="LOCAL-00001" summary="improved turn system, fixed keys[]">
+      <created>1586976611961</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1586976611962</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="improved turn system, fixed keys[]" />
+    <option name="LAST_COMMIT_MESSAGE" value="improved turn system, fixed keys[]" />
   </component>
   <component name="WindowStateProjectService">
     <state x="872" y="359" key="#Project_Structure" timestamp="1586971646959">
@@ -105,21 +121,29 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1650" y="476" key="#com.intellij.ide.util.PackageChooserDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1586802618729" />
-    <state width="1234" height="281" key="GridCell.Tab.0.bottom" timestamp="1586973525529">
+    <state x="294" y="299" key="CommitChangelistDialog2" timestamp="1586976611078">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
+    <state x="294" y="299" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1586976611078" />
+    <state width="914" height="195" key="GridCell.Tab.0.bottom" timestamp="1587004189161">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="195" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587004189161" />
     <state width="1234" height="281" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1586973525529" />
-    <state width="1234" height="281" key="GridCell.Tab.0.center" timestamp="1586973525529">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="914" height="195" key="GridCell.Tab.0.center" timestamp="1587004189160">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="914" height="195" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587004189160" />
     <state width="1234" height="281" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1586973525529" />
-    <state width="1234" height="281" key="GridCell.Tab.0.left" timestamp="1586973525529">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="914" height="195" key="GridCell.Tab.0.left" timestamp="1587004189160">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="914" height="195" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587004189160" />
     <state width="1234" height="281" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1586973525529" />
-    <state width="1234" height="281" key="GridCell.Tab.0.right" timestamp="1586973525529">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="914" height="195" key="GridCell.Tab.0.right" timestamp="1587004189161">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="914" height="195" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587004189161" />
     <state width="1234" height="281" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1586973525529" />
     <state width="1234" height="491" key="GridCell.Tab.1.bottom" timestamp="1586972084204">
       <screen x="0" y="0" width="2560" height="1400" />
@@ -141,6 +165,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="141" y="347" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1586972144930" />
+    <state x="232" y="437" key="Vcs.Push.Dialog.v2" timestamp="1586976621570">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="232" y="437" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1586976621570" />
     <state x="959" y="528" key="com.intellij.ide.util.TipDialog" timestamp="1586802121476">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -157,9 +185,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1324" y="127" width="1252" height="1084" key="dock-window-2/0.0.2560.1400@0.0.2560.1400" timestamp="1586938455325" />
-    <state x="1273" y="0" width="1294" height="1407" key="dock-window-3" timestamp="1586938802149">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="953" y="0" width="974" height="1047" key="dock-window-3" timestamp="1587002189022">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="953" y="0" width="974" height="1047" key="dock-window-3/0.0.1920.1040@0.0.1920.1040" timestamp="1587002189022" />
     <state x="1273" y="0" width="1294" height="1407" key="dock-window-3/0.0.2560.1400@0.0.2560.1400" timestamp="1586938802149" />
     <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1586931372116">
       <screen x="0" y="0" width="2560" height="1400" />

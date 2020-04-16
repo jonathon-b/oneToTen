@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Container {
-    int turn;
+    int turn=0;
     int handNum=9;
     boolean bidding=true;
     int myID = 0;
@@ -48,7 +48,7 @@ public class Container {
     void turnHandler(){
         if(isMyTurn()&&!bidding){
             int temp=keyControl();
-            if(temp>-1){
+            if(temp>-1&&temp<11){
                 //add a copy of the card selected by player to the current trick
                 t.c.add(p.get(myID).c.get(temp).copy());
 
@@ -57,7 +57,9 @@ public class Container {
             }
         }
         else if(isMyTurn()){
-
+            int temp=keyControl();
+            if(temp>-1)
+                p.get(myID).setBid(temp);
         }
     }
 
@@ -133,6 +135,7 @@ public class Container {
     void draw(Graphics2D win){
         p.get(myID).drawCards(win);
         p.get(myID).draw(win);
+        t.draw(win);
         drawHandNum(win);
         drawScoreBoard(win);
     }
@@ -148,7 +151,7 @@ public class Container {
     }
 
     int keyControl(){
-        for(int i=0;i<10;i++){
+        for(int i=0;i<m.keys.length;i++){
             if(m.keys[i])
                 return i;
         }
@@ -156,8 +159,8 @@ public class Container {
     }
 
     void update(){
-        System.out.println(keyControl());
-
+        turnHandler();
+        nextTurn();
     }
 
     }

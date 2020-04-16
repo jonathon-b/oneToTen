@@ -12,6 +12,9 @@ public interface Main {
 
     Font mainFont = new Font ("Trebuchet MS",Font.BOLD,20);
 
+    final int CARD_WIDTH = 43;
+    final int CARD_HEIGHT = 63;
+
     //card ranges for suit
     int[] club = {0,12};
     int[] diamond = {13,25};
