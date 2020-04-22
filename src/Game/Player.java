@@ -8,10 +8,24 @@ public class Player {
     ArrayList<Card> c = new ArrayList<>();
     boolean hasBid=false;
     int bid=0;
+    int tricks =0;
     int score=0;
 
     public Player(){
         this.name="test";
+    }
+
+    public void score(){
+        if(this.tricks==this.bid)
+            score+=10;
+        score+=this.tricks;
+    }
+
+    public void nextHand(){
+        tricks=0;
+        hasBid = false;
+        bid =0;
+        c.clear();
     }
 
     public Player(int index){
@@ -55,7 +69,6 @@ public class Player {
         sortCardBySuit(index, Main.spade,temp);
 
         c=temp;
-
     }
 
     void draw(Graphics2D win){

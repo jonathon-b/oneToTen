@@ -6,13 +6,18 @@ import java.util.ArrayList;
 public class Trick {
     public ArrayList<Card> c = new ArrayList();
     final int cardOnLine=5;
+    Container gameInstance;
+
+    public Trick(Container game){
+        this.gameInstance=game;
+    }
 
     public void reset(){
         c.clear();
     }
 
     public int suitCheck(int start, int end, Card.Suit s, boolean blocking){
-        if(c.get(0).s==s&&blocking) {
+        if((c.get(0).s==s&&blocking)||!blocking) {
             for (int i = start; i > end; i--) {
                 for (Card j : c) {
 
@@ -33,27 +38,32 @@ public class Trick {
 
     public int findWinnner(){ //returns playerID of winner
 
+        int temp = -1;
+
         //spades
         if(suitCheck(51,38, Card.Suit.spade,false)>-1)
-            return suitCheck(51,38, Card.Suit.spade,false);
+            temp = suitCheck(51, 38, Card.Suit.spade, false);
         //end spades
 
         //hearts
-        if(suitCheck(38,25, Card.Suit.heart,true)>-1)
-            return suitCheck(38,25, Card.Suit.heart,true);
+        else if(suitCheck(38,25, Card.Suit.heart,true)>-1)
+            temp = suitCheck(38,25, Card.Suit.heart,true);
         //end hearts
 
         //diamonds
-        if(suitCheck(25,12, Card.Suit.heart,true)>-1)
-            return suitCheck(25,12, Card.Suit.heart,true);
+        else if(suitCheck(25,12, Card.Suit.diamond,true)>-1)
+            temp = suitCheck(25,12, Card.Suit.diamond,true);
         //end diamonds
 
         //clubs
-        if(suitCheck(12,-1, Card.Suit.heart,true)>-1)
-            return suitCheck(12,-1, Card.Suit.heart,true);
+        else if(suitCheck(12,-1, Card.Suit.club,true)>-1)
+            temp = suitCheck(12,-1, Card.Suit.club,true);
         //end clubs
 
-        return -1;
+        gameInstance.turn=temp;
+
+        return temp;
+
     }
 
 }

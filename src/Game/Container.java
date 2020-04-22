@@ -7,15 +7,17 @@ import java.util.Random;
 public class Container {
     int turn=0;
     int handNum=9;
-    boolean bidding=true;
     int myID = 0;
     Random r = new Random();
     ArrayList<Player> p = new ArrayList<>();
-    Trick t = new Trick();
+    Trick t;
     Main m;
 
-    public Container(Main m){
+    public Container(Main m, ArrayList<Player> p){
+        this.p=p;
         this.m=m;
+        t = new Trick(this);
+        giveCards(getCardsInHand()+1);
     }
 
     public void addPlayer(Player p){
@@ -27,7 +29,8 @@ public class Container {
     }
 
     int getMaxHands(){
-        return 52/p.size();
+        int temp = 52/p.size();
+        return temp>10?10:temp;
     }
 
     boolean isSecondTime(){
@@ -45,22 +48,44 @@ public class Container {
         t.reset();
     }
 
-    void turnHandler(){
-        if(isMyTurn()&&!bidding){
+
+
+    void turnHandler() {
+
+        if (t.c.size() == this.p.size()){
+            p.get(t.findWinnner()).tricks++;
+            t.reset();
+    }
+
+        boolean temp2=true;
+        for (Player i:p) {
+            if(i.c.size()!=0)
+                temp2=false;
+        }
+
+        if(temp2)
+            this.nextHand();
+
+        if(isMyTurn()&&p.get(myID).hasBid){
             int temp=keyControl();
-            if(temp>-1&&temp<11){
+            if(temp>-1&&temp<p.get(myID).c.size()){
+                System.out.println("here");
                 //add a copy of the card selected by player to the current trick
                 t.c.add(p.get(myID).c.get(temp).copy());
 
                 //remove card from players hand
                 p.get(myID).c.remove(temp);
+                p.get(myID).sortCards();
+                //turn++;
             }
         }
         else if(isMyTurn()){
             int temp=keyControl();
-            if(temp>-1)
+            if(temp>-1) {
                 p.get(myID).setBid(temp);
-        }
+                //turn++;
+            }
+            }
     }
 
     boolean checkCard(int genNum){ //check if card has been dealt
@@ -86,6 +111,7 @@ public class Container {
                 p.get(j).c.add(new Card(genCard(), p.get(j).c.size(), j));
             }
         }
+        debugPrint();
         for (Player i:p) {
             i.sortCards();
         }
@@ -96,10 +122,13 @@ public class Container {
     }
 
     void nextHand(){
+        this.handNum++;
         t.reset();
-        for (Player i:p) {
-            i.hasBid=false;
+        for (Player i:
+             p) {
+            i.nextHand();
         }
+        giveCards(getCardsInHand());
     }
 
     void nextTurn(){
@@ -115,12 +144,12 @@ public class Container {
                 win.setColor(Color.YELLOW);
             else
                 win.setColor(Color.WHITE);
-
+            win.setFont(new Font("Trebuchet MS",Font.PLAIN,20));
             if(p.get(i).hasBid)
-                win.drawString(p.get(i).name+": "+"     Bid: "+ p.get(i).bid+"     Score: "+p.get(i).score,0, 190+30*i);
+                win.drawString(p.get(i).name+":   "+"Bid: "+ p.get(i).bid+",   Score: "+p.get(i).score +",   Tricks:"+p.get(i).tricks,0, 190+30*i);
 
             else
-                win.drawString(p.get(i).name+": "+"     Bid: HAS NOT BID" +"     Score: "+p.get(i).score,0, 190+30*i);
+                win.drawString(p.get(i).name+":   "+"Bid: None,  " + "Score: "+p.get(i).score,0, 190+30*i);
         }
     }
 
@@ -147,6 +176,10 @@ public class Container {
             for (Card j: p.get(i).c) {
               System.out.print(" "+j.cardNum);
             }
+        }
+        for (Card i:
+             p.get(0).c) {
+            System.out.println(i.s.toString());
         }
     }
 

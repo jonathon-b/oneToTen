@@ -16,9 +16,9 @@ public interface Main {
     final int CARD_HEIGHT = 63;
 
     //card ranges for suit
-    int[] club = {0,12};
-    int[] diamond = {13,25};
-    int[] heart = {26,38};
-    int[] spade = {39,51};
+    int[] club = {0,13};
+    int[] diamond = {13,26};
+    int[] heart = {26,39};
+    int[] spade = {39,52};
 
 }

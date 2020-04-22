@@ -6,6 +6,7 @@ import Utilities.ImageSlicer;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
 
 public class Main extends GDV5 implements Utilities.Main {
 
@@ -28,16 +29,15 @@ public class Main extends GDV5 implements Utilities.Main {
     }
 
     public Main(){
-
-        game = new Container(this);
+        ArrayList<Player> p = new ArrayList<>();
+        for(int i=0;i<2;i++){
+            p.add(new Player(i));
+        }
+        game = new Container(this,p);
 
         back = this.addImage("Images/back_resize.jpg");
         is = new ImageSlicer(this.addImage("Images/cards.png"),13,4);
-        for(int i=0; i<5; i++) {
-            game.addPlayer(new Player(i));
-        }
 
-        game.giveCards(10);
 
         game.debugPrint();
     }
